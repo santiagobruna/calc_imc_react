@@ -11,17 +11,23 @@ function App() {
   const [classificationClass, setClassificationClass] = useState("");
 
   const handleHeigthValue = (e) => {
-    const newValueA = e.target.value.replace(",", ".");
+    let newValueA = e.target.value.replace(",", ".");
+    if (newValueA > 3) {
+      // Converte valores acima de 3 para metros (ex.: 165 para 1.65)
+      newValueA = (newValueA / 100).toFixed(2);
+    }
     setHeigth(newValueA);
   };
   const handleWeigthValue = (e) => {
     const newValueB = e.target.value.replace(",", ".");
     setWeight(newValueB);
+    console.log("Peso inserido:", newValueB);
   };
   const calcImc = () => {
+    console.log("Calculando IMC com:", heigth, weight);
     if (heigth && weight) {
       // Se os valores forem válidos
-      const heigthEmMetros = parseFloat(heigth); // Garantir que é um número
+      const heigthEmMetros = parseFloat(heigth);  // Garantir que é um número
       const weightNumber = parseFloat(weight); // Garantir que é um número
 
       // Verifica se os valores são válidos (não NaN)

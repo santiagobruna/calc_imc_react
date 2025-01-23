@@ -1,7 +1,7 @@
 const Formulario = ({ heigthValue, weightValue, calcImc }) => {
   const handleKeyDown = (e) => {
     // Impede a digitação do ponto (.), vírgula (,) e sinal de negativo (-)
-    if (e.key === "." || e.key === "-" || e.key === "+") {
+    if (e.key === "-" || e.key === "+") {
       e.preventDefault();
     }
   };
@@ -10,7 +10,7 @@ const Formulario = ({ heigthValue, weightValue, calcImc }) => {
       <form className="mb-3">
         <div className="form-group">
           <label htmlFor="height" className="form-label">
-            Altura:
+            Altura (cm):
           </label>
           <input
             className="form-control"
@@ -23,7 +23,7 @@ const Formulario = ({ heigthValue, weightValue, calcImc }) => {
         </div>
         <div className="form-group">
           <label htmlFor="weight" className="form-label">
-            Peso:
+            Peso (kg):
           </label>
           <input
             className="form-control"
