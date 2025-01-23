@@ -21,10 +21,8 @@ function App() {
   const handleWeigthValue = (e) => {
     const newValueB = e.target.value.replace(",", ".");
     setWeight(newValueB);
-    console.log("Peso inserido:", newValueB);
   };
   const calcImc = () => {
-    console.log("Calculando IMC com:", heigth, weight);
     if (heigth && weight) {
       // Se os valores forem válidos
       const heigthEmMetros = parseFloat(heigth);  // Garantir que é um número
